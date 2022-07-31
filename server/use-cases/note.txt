@@ -1,0 +1,4 @@
+Use Cases are interactions between Entities
+Changes to this layer should not affect the entities
+
+for example: user validator
