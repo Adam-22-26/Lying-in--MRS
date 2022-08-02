@@ -1,0 +1,123 @@
+
+{
+    "users": {
+        "fullname":null,
+        "gender":null,
+        "age":null,
+        "position":null,
+        "account_role":null,
+        "email":null,
+        "hashed_password":null,
+        "verified" : false,
+        "display_photo": null
+        },
+
+    "notes":{
+        "title": null,
+        "description": null,
+        "date":null
+        },
+    "todos":{
+        "title": null,
+        "done":false,
+        "description": null,
+        "date":null
+        },
+
+    "formdata":{
+        "date":null,
+        "time": null,
+        "patient_information":{
+            "name":null,
+            "birthday":null,
+            "age": null,
+            "arrival_date": null,
+            "arrival_time":null,
+            "status":null,
+            "address":null,
+            "no_of_hours_stayed":null,
+            "no_of_check_ups":null,
+            "no_of_tetanus_toxoid_given":null,
+            "obs_score":null,
+            "laboratory_done":{
+                "cbc":false,
+                "unalysis":false,
+                "hbsag":false,
+                "vdrl":false,
+                "blood_typing":false,
+                "ultrasound":false,
+                "syphilis":false
+            },
+            "medical_history":{
+                "hypertension":false,
+                "thyroid_problems":false,
+                "heart_problems":false,
+                "diabetes_mellitus": false,
+                "others":null,
+                "ob_hisotryNSD":null,
+                "cs":null
+            },
+            "vs":{
+                "bp":null,
+                "hr":null,
+                "pr":null,
+                "temp":null,
+                "blood_type_RH":null
+            },
+            "physical_exam":{
+                "headNeck":null,
+                "heart":null,
+                "chest":null,
+                "abdomen":null,
+                "fh":null,
+                "fht":null
+            },
+            "pelvis":{
+                "ie":null,
+                "cx_dilatation":null,
+                "effacement":null,
+                "station":null,
+                "bow_ruptured":{
+                    "yes":false,
+                    "no":false
+                },
+                "time":null,
+                "character":null
+            },
+            "medication_taken":{
+                "before_refferal": null,
+                "during_transport":null,
+                "progress_of_labor":null,
+                "diagnostic_and_finding":null,
+                "reasons_for_referral":null,
+                "name_and_designation_of_reffering_service_provider":null,
+                "contact_no":null,
+                "signature_of_referring_provider":null,
+                "accomplished_by_health_worker":{
+                    "yes":false,
+                    "no":false
+                }
+            }
+
+        },
+        "return_slip":{
+            "date":null,
+            "parents_name":null,
+            "age":null,
+            "sex":null,
+            "initial_diagnostic_admitting_impression":null,
+            "action_taken":null,
+            "initial_plan":null
+        },
+        "contact_number":null
+    }
+}
+
+
+
+
+
+
+
+
+

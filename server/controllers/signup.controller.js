@@ -1,47 +1,67 @@
-// const {getUser, createUser} = require("../use-cases/database.services/user.mongoose.service");
 
-const SignupLogic = require("../entities/signup.logic");
-const userModel = require("../data-access/model/user.model")
+const user_query = require("../data-access/query")
+const user_mutation = require("../data-access/mutation")
 const {encryptPassword} = require("../use-cases/utils/password.util")
-
 const accountSignupController = async (req, res, next) => {
-  const {firstname, lastname, email, password} = req.body
+  const {fullname, gender, age, position, account_role, email, password} = req.body
 
   const saltRound = 10
-  const hashed =await encryptPassword(password, saltRound)
-  const signupLogic = new SignupLogic(userModel);
+  const hashed_password =await encryptPassword(password, saltRound)
+
 
   const data = {
-    firstname: firstname,
-    lastname:lastname,
-    email: email,
-    hashed_password: hashed
+    fullname, gender, age, position, account_role, email, hashed_password
   }
-  try {
-    const getUser = await signupLogic.getUser(data); // check if user is exisiting 
-    if (!getUser.length > 0) { 
-      const createUser = await signupLogic.createUser(data); //else create new user
-      if (createUser) {
-        res
+  try{
+    const user = await user_query.isUserExist(email)
+    if(!user?.exists){
+      const createUser = await user_mutation.createUser(data)
+      
+      if(createUser.success){
+        //if req.body.account_role === admin exe: verifyUser, else response 
+        if(account_role.toLowerCase() === 'admin'){
+         try{
+          const isverified = await user_mutation.verifyUser(createUser.id)
+          if(isverified.success){
+            res.status(201).send({success: true, message: "ADMIN SIGNUP SUCCESSFULLY AND VERIFIED"})
+          }
+         }catch(err){
+          res.status(409).send({success: true, message: "ADMIN VERIFY FAILED", err})
+         }
+        }else{
+          res
           .status(201)
           .send({
             data: {
               success: true,
               status: 201,
-              data: "you were sign up",
+              message: "you were sign up",
               user: createUser,
             },
           });
+        }
+
       }
-    } else {
-      res.status(409).json({ serverMessage: "Email already in use" });
-      return;
+    }else{
+      res.status(409).json({ message: "Email already in use" });
     }
-  } catch (err) {
-    res.status(500).json({ errorMessage: err });
+  }catch(err){
+    console.log(err)
   }
 
 
+//   try{
+//     const isverified = await query.verifyUser(id)
+
+//     if(isverified){
+//         next()
+//     }else{
+//         res.status(409).send({status: 409, message: "CANNOT VERIFY ADMIN"})
+//     }
+// }catch(err){
+//     console.log(err)
+//     res.status(409).send({status:409, message: "VERIFIED FAILED", err})
+// }
   // validate or check if the inputs are corresponds to the needs of entities
   /* 
     promise based

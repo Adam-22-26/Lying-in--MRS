@@ -18,7 +18,10 @@ const joiValidator = (validationSchema)=>{
 const{signupSchema} = require("./schemas/signup.schema.validator")
 const validateSignup = joiValidator(signupSchema)
 
+const {formdata_joi_schema} = require("./schemas/patient.form.schema.validator")
+const validatePatientForm = joiValidator(formdata_joi_schema)
 module.exports ={
     joiValidator,
-    validateSignup
+    validateSignup,
+    validatePatientForm
 }

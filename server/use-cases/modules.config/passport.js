@@ -1,8 +1,8 @@
 
 
 //model
-const userModel = require("../../data-access/model/user.model");
 
+const {userModel} = require("../../data-access/model")
 //callback
 const localCallback = require("../../data-access/passport.local.strategy.callback");
 

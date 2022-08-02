@@ -2,11 +2,24 @@
 
 const { comparePassword } = require("../../use-cases/utils/password.util");
 
-module.exports = (userModel)=>{
+module.exports = (User)=>{
     return {
+    isUserExist: async(email)=>{
+        const user = await User.findOne({email: email}).then(async(user)=>{
+            if(user) return {id: user._id}
+            return {id : null}
+        }).catch(err=>{
+            return err
+        })
+        if(!user?.id){
+           return {exists: false} 
+        }else{
+            return {exists: true}
+        }
+    },
      getUser : async(email, password)=>{
         
-        const user =   await userModel.findOne({email: email}).then(async(user)=>{
+        const user =   await User.findOne({email: email}).then(async(user)=>{
                 if(user){             
                     const isIdentical = await comparePassword(password, user.hashed_password);
                     if(isIdentical){
@@ -28,15 +41,23 @@ module.exports = (userModel)=>{
             }
         },
      getUsers :()=>{
-        const users = userModel.find()
+        const users = User.find()
         if(!users){
             return null
         }else{
             return users
         }
         },
-     authenticateUser :(userModel)=>{
+     authenticateUser :(User)=>{
         
+        },
+        getAdmins: ()=>{
+            try{
+                const admins = User.find({account_role: "Admin", verified: true}).exec()
+                return admins
+            }catch(err){
+                return {success: false, err}
+            }
         }
     }
 }
