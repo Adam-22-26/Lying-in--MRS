@@ -49,3 +49,8 @@ npm install --legacy-peer-deps
 npm run dev
 ```
 
+### Go to 
+
+```sh
+localthost:3000
+```
