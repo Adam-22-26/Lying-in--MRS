@@ -1,4 +1,18 @@
 
+# Pre-requisites
+
+1. Node js
+``` sh 
+https://nodejs.org/en/download/
+
+```
+
+2. Instal mongodb server and makes your it is running
+``` sh 
+https://www.mongodb.com/try/download/community
+
+```
+
 
 # client
 
