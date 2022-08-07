@@ -7,7 +7,7 @@ https://nodejs.org/en/download/
 
 ```
 
-2. Instal mongodb server and makes your it is running
+2. Install mongodb server and makes sure it is running
 ``` sh 
 https://www.mongodb.com/try/download/community
 
