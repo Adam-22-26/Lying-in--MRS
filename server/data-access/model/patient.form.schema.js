@@ -2,6 +2,7 @@ const mongoose = require("mongoose");
 const patient_form_schema = new mongoose.Schema({
         date:{type : Date},
         time: {type:String, required: true},
+        finished: false,
         patient_information:{
             name:{type: String},
             birthday:{type: Date},
@@ -74,16 +75,16 @@ const patient_form_schema = new mongoose.Schema({
                 }
             }
         },
-        return_slip:{
-            date:{type: Date},
-            parents_name:{type: String},
-            age:{type: Number},
-            sex:{type: String},
-            initial_diagnostic_admitting_impression:{type: String},
-            action_taken:{type: String},
-            initial_plan:{type: String},
-        },
-        contact_number:{type: String},
+        // return_slip:{
+        //     date:{type: Date},
+        //     parents_name:{type: String},
+        //     age:{type: Number},
+        //     sex:{type: String},
+        //     initial_diagnostic_admitting_impression:{type: String},
+        //     action_taken:{type: String},
+        //     initial_plan:{type: String},
+        // },
+        // contact_number:{type: String},
 })
 
 module.exports = patient_form_schema

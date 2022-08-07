@@ -6,10 +6,10 @@ module.exports = async(req, res, next)=>{
     if(account_role.toLowerCase() === "admin"){
         const admin = await query.getAdmins()
         console.log("admin", admin, "role", account_role)
-        if(admin?.length > 0){
+        if(admin){
+            // response 409 kung wla pang kahit isang verified
             res.status(409).send({status: 409, message: "ADMIN ALREADY EXISTS "})
         }else{
-
             next()
         }
         //check niya kung wala pang admin, if wala pa, then automatically mag update yung verified: true

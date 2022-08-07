@@ -75,15 +75,15 @@ const formdata_joi_schema = Joi.object().keys({
         },
       }),
     }),
-    return_slip: Joi.object().keys({
-      date: Joi.date().format(["YYYY-MM-DD", "DD-MM-YYYY"]).utc(),
-      parents_name: Joi.string().empty(""),
-      age: Joi.number(),
-      sex: Joi.string().empty(""),
-      initial_diagnostic_admitting_impression: Joi.string().empty(""),
-      action_taken: Joi.string().empty(""),
-      initial_plan: Joi.string().empty(""),
-    }),
-    contact_number: Joi.string().empty(""),
+    // return_slip: Joi.object().keys({
+    //   date: Joi.date().format(["YYYY-MM-DD", "DD-MM-YYYY"]).utc(),
+    //   parents_name: Joi.string().empty(""),
+    //   age: Joi.number(),
+    //   sex: Joi.string().empty(""),
+    //   initial_diagnostic_admitting_impression: Joi.string().empty(""),
+    //   action_taken: Joi.string().empty(""),
+    //   initial_plan: Joi.string().empty(""),
+    // }),
+    // contact_number: Joi.string().empty(""),
   });
 module.exports = { formdata_joi_schema };

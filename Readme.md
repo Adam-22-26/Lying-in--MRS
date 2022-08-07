@@ -40,7 +40,7 @@ cd server
 ## Project Setup
 
 ```sh
-npm install
+npm install --legacy-peer-deps
 ```
 
 ### Compile and Hot-Reload for Development

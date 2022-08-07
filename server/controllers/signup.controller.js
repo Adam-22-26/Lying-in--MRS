@@ -15,35 +15,16 @@ const accountSignupController = async (req, res, next) => {
   try{
     const user = await user_query.isUserExist(email)
     if(!user?.exists){
-      const createUser = await user_mutation.createUser(data)
+      const newUser = await user_mutation.createUser(data)
       
-      if(createUser.success){
-        //if req.body.account_role === admin exe: verifyUser, else response 
-        if(account_role.toLowerCase() === 'admin'){
-         try{
-          const isverified = await user_mutation.verifyUser(createUser.id)
-          if(isverified.success){
-            res.status(201).send({success: true, message: "ADMIN SIGNUP SUCCESSFULLY AND VERIFIED"})
-          }
-         }catch(err){
-          res.status(409).send({success: true, message: "ADMIN VERIFY FAILED", err})
-         }
-        }else{
-          res
-          .status(201)
-          .send({
-            data: {
-              success: true,
-              status: 201,
-              message: "you were sign up",
-              user: createUser,
-            },
-          });
-        }
-
+      if(newUser?.success){
+          res.status(201).send(newUser) 
+      }else{
+        //conflic 409
+        res.status(200).send(newUser)
       }
     }else{
-      res.status(409).json({ message: "Email already in use" });
+      res.status(409).send({ success:false, message: "Email already in use" });
     }
   }catch(err){
     console.log(err)

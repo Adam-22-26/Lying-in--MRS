@@ -8,6 +8,7 @@ const signupSchema = Joi.object().keys({
     account_role: Joi.string().required(),
     email: Joi.string().required(),
     password: Joi.string().required(),
+    
 })
 // it should be dynamic any related to account 
 

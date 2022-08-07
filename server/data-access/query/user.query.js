@@ -51,13 +51,43 @@ module.exports = (User)=>{
      authenticateUser :(User)=>{
         
         },
-        getAdmins: ()=>{
+        getAdmins: async()=>{
             try{
-                const admins = User.find({account_role: "Admin", verified: true}).exec()
+                const admins = User.findOne({account_role: "admin",verified: true }).exec()
+                // console.log("getAdmins", admins)
                 return admins
             }catch(err){
                 return {success: false, err}
             }
+        },
+        getAllUnverifiedAccounts : async()=>{
+            try{
+                const unverified =  await User.find({verified:false}).select(["-hashed_password"]).exec()
+                console.log(unverified)
+                if(unverified?.length > 0){
+                    return {success: true, unverified}
+                }else{
+                    return {success: false, unverified}
+                }
+            }catch(err){
+                return {success: false, err}
+            }
+        },
+        getVerifiedAccounts :async()=>{
+            try{
+                const verified =  await User.find({verified:true}).select(["-hashed_password"]).exec()
+
+                if(verified?.length > 0){
+                    return {success: true, verified}
+                }else{
+                    return {success: false, verified}
+                }
+            }catch(err){
+                return {success: false, err}
+            }
+        },
+        getUserLoggedInInfo: async(id)=>{
+
         }
     }
 }

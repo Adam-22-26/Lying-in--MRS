@@ -11,7 +11,11 @@ const local_strategy = require("passport-local").Strategy;
 
 const app = express();
 
-app.use(cors());
+app.use(cors({
+  origin: "http://localhost:3000",
+  credentials: true,
+}));
+
 app.use(express.json());
 const httpServer = http.createServer(app);
 

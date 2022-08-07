@@ -31,6 +31,11 @@ npm run dev
 npm run build
 ```
 
+### Build tailwindcss
+```sh
+npx tailwindcss -i ./src/assets/css/base.css -o ./src/assets/css/index.css --watch
+```
+
 ### Lint with [ESLint](https://eslint.org/)
 
 ```sh

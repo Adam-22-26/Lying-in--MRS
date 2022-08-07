@@ -1,8 +1,13 @@
-import { createApp } from 'vue'
-import App from './App.vue'
+import { createApp } from "vue";
+import App from "./App.vue";
 import router from "./router";
-const app =createApp(App)
-app.use(router)
-app.mount('#app')
+import userAuthStore from "./store"
+const app = createApp(App);
 
-// createApp(App).mount('#app')
+
+
+app.use(userAuthStore)
+userAuthStore.commit('fetchUser')
+app.use(router);
+
+app.mount("#app");
