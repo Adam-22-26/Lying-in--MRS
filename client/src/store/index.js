@@ -7,6 +7,7 @@ import { createStore } from "vuex";
       user: null,
       verifiedAccount: null,
       pendingAccount: null,
+      sidebarStatus: true,
     };
   },
   mutations: {
@@ -66,6 +67,12 @@ import { createStore } from "vuex";
       }).catch(err=>{
         console.log("pendingAccount", err)
       })
+    },
+    getMyProfile(state){
+
+    },
+    toggleSidebar(state){
+      state.sidebarStatus = !state.sidebarStatus
     }
   },
 });

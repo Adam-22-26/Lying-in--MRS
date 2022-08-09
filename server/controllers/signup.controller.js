@@ -3,17 +3,16 @@ const user_query = require("../data-access/query")
 const user_mutation = require("../data-access/mutation")
 const {encryptPassword} = require("../use-cases/utils/password.util")
 const accountSignupController = async (req, res, next) => {
-  const {fullname, gender, age, position, account_role, email, password} = req.body
+  console.log("signup controller", req.body)
+  const reqBody = req.body
 
   const saltRound = 10
-  const hashed_password =await encryptPassword(password, saltRound)
-
-
+  const hashed_password =await encryptPassword(reqBody.password, saltRound)
   const data = {
-    fullname, gender, age, position, account_role, email, hashed_password
+    ...reqBody, hashed_password
   }
   try{
-    const user = await user_query.isUserExist(email)
+    const user = await user_query.isUserExist(reqBody.email)
     if(!user?.exists){
       const newUser = await user_mutation.createUser(data)
       

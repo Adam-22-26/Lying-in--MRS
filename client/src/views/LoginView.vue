@@ -59,7 +59,7 @@ export default {
 
 <template>
   <div
-    class="flex w-full justify-center items-center min-h-[100vh] bg-auth-hero"
+    class="flex w-full justify-center items-center min-h-[100vh] bg-white-300 "
   >
     <form
     @submit="submitSignup($event)"
@@ -67,7 +67,7 @@ export default {
     >
       <AppLogoVue />
       <h1 class="text-[35px] font-display font-bold text-gray-800">Log In</h1>
-      <div class="w-full flex flex-col gap-8">
+      <div class="w-full flex justify-center flex-col gap-8">
         <AppInputFieldVue
           :label="'Email'"
           :input-type="'email'"

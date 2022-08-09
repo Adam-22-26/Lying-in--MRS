@@ -8,7 +8,7 @@ module.exports = (userModel)=>{
     });
     passport.deserializeUser((id, done) => {
       userModel
-        .findOne({ _id: id })
+        .findOne({ _id: id },["-hashed_password"])
         .then((user) => {
           if (!user) {
             return done(null, false);

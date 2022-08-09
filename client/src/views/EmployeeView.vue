@@ -110,7 +110,7 @@ export default {
           />
         </div>
         <div class="p-3">
-            dfsdf
+            Edit Account
         </div>
       </div>
       <div class="flex flex-col gap-3 w-full h-full overflow-auto">

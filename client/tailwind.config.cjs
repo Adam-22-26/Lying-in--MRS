@@ -10,11 +10,16 @@ module.exports = {
         20:"#FFFFFF",
         50: "#f8fafc",
         100: "#f1f5f9",
+        200: "#e2e8f0",
         300: "#cbd5e1",
         400: "#94a3b8",
         500: "#64748b",
       },
       green: "#7B9749",
+      lime:{
+        50: "#f7fee7",
+         100: '#ecfccb'
+      },
       darkgreen: "#2F3A3D",
       gray: {
         300: "#cbd5e1",

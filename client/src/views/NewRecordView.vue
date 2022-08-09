@@ -18,7 +18,7 @@ export default {
 };
 </script>
 <template>
-  <div class="flex flex-row max-h-[100vh] overflow-hidden">
+  <div class="font-display flex flex-row max-h-[100vh] overflow-hidden">
     <AppSidebarVue />
     <div class="w-full">
       <AppTopbarVue />

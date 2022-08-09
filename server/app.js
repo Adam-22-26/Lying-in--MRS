@@ -8,6 +8,7 @@ const MongoStore = require("connect-mongo");
 const {graphqlHTTP} = require("express-graphql")
 const { buildSchema } = require("graphql");
 const local_strategy = require("passport-local").Strategy;
+const cloudinary = require("cloudinary").v2;
 
 const app = express();
 
@@ -17,14 +18,18 @@ app.use(cors({
 }));
 
 app.use(express.json());
+app.use(express.urlencoded({ extended: true }))
 const httpServer = http.createServer(app);
 
-require("./use-cases/modules.config/express.session")(session,MongoStore)(app) // session and session and mongo-store
-require('./use-cases/modules.config/passport')(local_strategy)(passport) // just my opinion not proven.. I must call this module and inject passport as argument to make sure the passport are running in our application
+require("./config/express.session")(session,MongoStore)(app) // session and session and mongo-store
+require('./config/passport')(local_strategy)(passport) // just my opinion not proven.. I must call this module and inject passport as argument to make sure the passport are running in our application
 app.use(passport.initialize()) 
 app.use(passport.session())    
 
 require("./data-access/graphql/index.js")(app)(graphqlHTTP, buildSchema)
+
+// cloudinary 
+require("./config/cloudinary.config")(cloudinary)
 
 app.use((req, res, next)=>{
   console.log("req.isAuthenticated", req.isAuthenticated())

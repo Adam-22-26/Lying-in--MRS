@@ -89,13 +89,15 @@ export default {
     </div>
     <div class="w-full flex flex-col justify-center items-center">
       <div
-        class="w-[120px] h-[120px] border-t-[5px] border-b-[5px] border-r-[5px] border-green rounded-full"
-      ></div>
-      <p class="text-center w-full text-[20px] font-semibold">
-        {{ data.fullname }}
+        class="flex justify-center items-center w-[120px] h-[120px] border-t-[5px] border-b-[5px] border-r-[5px] border-green rounded-full overflow-hidden "
+      >
+      <img :src="data.display_photo" alt="" srcset="" class=" rounded-full h-full w-full object-cover " />
+      </div>
+      <p class="text-center w-full text-[19px] font-semibold">
+        {{ data.fullname }} 
       </p>
-      <p class="text-center w-full text-gray-600 mt-[-10px]">
-        {{ data.position }}
+      <p class="text-center w-full text-gray-600 mt-[-5px]">
+        {{ data.position.toUpperCase() }}
       </p>
     </div>
 

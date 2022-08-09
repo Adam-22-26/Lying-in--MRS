@@ -2,9 +2,9 @@
 
 //model
 
-const {userModel} = require("../../data-access/model")
+const {userModel} = require("../data-access/model")
 //callback
-const localCallback = require("../../data-access/passport.local.strategy.callback");
+const localCallback = require("../data-access/passport.local.strategy.callback");
 
 // here we inject dependecies
 module.exports = (local_strategy) => {
@@ -15,7 +15,7 @@ const localStrategy = new local_strategy(
 );
   return (passport) => {
     passport.use("local_strategy", localStrategy);
-    require("../../data-access/passport.serialize.deserialize")(userModel)(
+    require("../data-access/passport.serialize.deserialize")(userModel)(
       passport
     );
   };

@@ -68,3 +68,9 @@ npm run dev
 ```sh
 localthost:3000
 ```
+
+
+### Build tailwindcss
+```sh
+npx tailwindcss -i ./src/assets/css/base.css -o ./src/assets/css/index.css --watch
+```

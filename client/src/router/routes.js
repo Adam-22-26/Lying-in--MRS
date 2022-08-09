@@ -7,9 +7,15 @@ import EmployeeView from "../views/EmployeeView.vue";
 import TheFormSlip from "../components/TheFormSlip.vue";
 import TheFillupform from "../components/TheFillupform.vue";
 import VerifyView from "../views/VerifyView.vue";
-import ManageAccount from "../views/ManageAccount.vue";
+import HomepageView from "../views/HomepageView.vue";
+import AppTopbar from "../components/AppTopbar.vue";
 // TheFillupform
 const routes = [
+  {
+    path: "/",
+    name: "HomepageView",
+    component: HomepageView,
+  },
   {
     path: "/login",
     name: "LoginView",
@@ -29,10 +35,11 @@ const routes = [
   {
     path: "/dashboard",
     name: "DashboardView",
-    component: DashboardView,
+    components: { default: DashboardView },
     meta: {
       requiresAuth: true,
     },
+    children: [{ path: "",name:"AppTopbar", component: AppTopbar }],
   },
   {
     path: "/new-record",
@@ -68,7 +75,6 @@ const routes = [
     meta: {
       requiresAuth: true,
     },
-
   },
 ];
 export default routes;

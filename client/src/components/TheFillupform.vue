@@ -60,8 +60,8 @@ export default {
         </p>
       </div>
     </div>
-    <table
-      class="m-auto min-w-[1000px] max-w-[1000px] border-collapse w-full box-border"
+    <table 
+      class="filupform m-auto min-w-[1000px] max-w-[1000px] border-collapse w-full box-border"
     >
       <tr>
         <td class="border-[1px]" colspan="2">
@@ -80,35 +80,35 @@ export default {
 
       <tr>
         <td class="border-[1px]" colspan="2">
-          <span class="font-semibold">Name</span>
+          <span class="">Name</span>
           <input
             type="text"
             class="focus:outline-none"
             @input="onChange($event)"
           />
         </td>
-        <td class="border-[1px]" colspan="1">
-          Birthday: <input type="text" class="focus:outline-none" />
+        <td class="border-[1px] whitespace-nowrap" colspan="1">
+          <span>Birthday:</span> <input type="text" class="focus:outline-none" />
         </td>
-        <td class="border-[1px]" colspan="1">
+        <td class="border-[1px] whitespace-nowrap" colspan="1">
           Age: <input type="text" class="focus:outline-none" />
         </td>
       </tr>
 
       <tr>
-        <td class="border-[1px]" colspan="2">
+        <td class="border-[1px] whitespace-nowrap" colspan="2">
           Arrival Date: <input type="date" class="focus:outline-none" />
         </td>
-        <td class="border-[1px]" colspan="1">
+        <td class="border-[1px] whitespace-nowrap" colspan="1">
           Arrival Time: <input type="time" class="focus:outline-none" />
         </td>
-        <td class="border-[1px]" colspan="1">
+        <td class="border-[1px] whitespace-nowrap" colspan="1">
           Status: <input type="text" class="focus:outline-none" />
         </td>
       </tr>
 
       <tr>
-        <td class="border-[1px]" colspan="4">
+        <td class="border-[1px] whitespace-nowrap" colspan="4">
           Adress: <input type="text" class="focus:outline-none min-w-[900px]" />
         </td>
       </tr>
@@ -123,11 +123,11 @@ export default {
       </tr>
 
       <tr>
-        <td class="border-[1px]" colspan="2">
+        <td class="border-[1px] whitespace-nowrap" colspan="2">
           No. of Tetanus Toxoid given:
           <input type="number" class="focus:outline-none" />
         </td>
-        <td class="border-[1px]" colspan="2">
+        <td class="border-[1px] whitespace-nowrap" colspan="2">
           OB Score: <input type="text" class="focus:outline-none" />
         </td>
       </tr>

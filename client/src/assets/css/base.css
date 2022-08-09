@@ -4,7 +4,6 @@
 
 .main_navbar .router-link-exact-active{
     color: white;
-    
 }
 .main_navbar .router-link-exact-active::after{
     content: '';
@@ -14,8 +13,36 @@
     background-color: white;
     left: 0;
     top: 0;
-    outline: 1px solid green;
 }
+
+
+.sidebarLink:hover::after{
+  font-size: 16px;
+  white-space: nowrap;
+  font-weight: bold;
+  width: auto;
+  padding: 10px 20px ;
+  border-radius:10px;
+  background-color: #2F3A3D;
+  color: white;
+  position: absolute;
+  left: 104%;
+  z-index: 20;
+  transition: ease-in-out 300ms forwards;
+}
+.dashboardLink:hover::after{
+content: 'Dashboard';
+}
+.recordsViewLink:hover::after{
+  content: 'Find Records';
+  }
+.recordFormLink:hover::after{
+  content: 'New Record';
+  }
+.employeeLink:hover::after{
+content: 'Employee';
+} 
+
 .newRecordNav > .router-link-exact-active{
     color:white;
     background-color: #2F3A3D;
@@ -120,3 +147,29 @@
     100% {left: 0;opacity: 1;}
 
   }
+
+  /* .sideBar{
+    
+    animation: sideBarSlide 100ms ease-in-out forwards;
+  }
+  @keyframes sideBarSlide {
+    0% {width: 0;}
+    100% {width: 60px;}
+
+  } */
+  /* w-[60px] min-w-[60px] */
+
+
+  /* forrrrrrrrrrrm */
+
+  .filupform td{
+    padding: 5px;
+    box-sizing: border-box;
+    
+  }
+
+  .filupform td input{
+    background-color: #f1f5f9;
+    margin: 5px;
+  }
+  
