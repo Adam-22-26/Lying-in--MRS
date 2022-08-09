@@ -22,9 +22,12 @@ module.exports = {
       },
       darkgreen: "#2F3A3D",
       gray: {
+        50: "#F2F4F5",
+        100: "#f3f4f6",
         300: "#cbd5e1",
         400: "#94a3b8",
         600: "#828181",
+        700: "#4b5563",
         800: "#464444",
       },
       blue: {
@@ -56,3 +59,4 @@ module.exports = {
 // 7B9749  - green mostly in hover
 // 828181 - light gray mostyly buttons for in active
 // 464444 - drak gray (Font colors)
+

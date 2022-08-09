@@ -1,30 +1,47 @@
 <script>
 import AppButtonVue from "./AppButton.vue";
-// import html2pdf from "html2pdf.js";
-import VueHtml2pdf from "vue-html2pdf";
 export default {
   name: "TheFillupform",
   components: {
     AppButtonVue,
-    VueHtml2pdf,
   },
-  created() {
-    // console.log(html2pdf)
+  data() {
+    return {
+      fullname: "",
+    };
   },
+  created() {},
   mounted() {},
   methods: {
-    printForm() {
-
-    },
+    saveDocument(e){
+        e.preventDefault()
+       
+        if(true) {//success
+            this.$router.push({path: '/new-record/return-slip'})
+   
+        }
+    }
   },
 };
 </script>
 <template>
-  <form ref="html2Pdf" class="fillup_form min-w-[1000px] m-2 mb-20">
+  <form class="relative fillup_form min-w-[1000px] m-2 mb-20 "
+    @submit="saveDocument($event)">
     <!-- overflow-auto -->
     <!-- width of paper -->
     <!-- table -->
-
+    <!-- <div class="w-full flex justify-end sticky top-0 m-2">
+      <AppButtonVue
+        :button-type="'reset'"
+        :label="'Clear'"
+        :style="'bg-white-50 text-gray-800 hover:bg-green hover:text-white-100 bg-white-300 w-[150px]'"
+      />
+      <AppButtonVue
+        :button-type="'submit'"
+        :label="'Save'"
+        :style="'w-[150px] '"
+      />
+    </div> -->
     <div class="flex item-center justify-center gap-3">
       <div>
         <img
@@ -35,7 +52,7 @@ export default {
       </div>
       <div>
         <p class="text-[30px] font-bold text-center">
-          Jennifer b. alcaraz lying-in clinic
+          Jennifer B. Alcaraz lying-in clinic
         </p>
         <p class="text-[20px] font-semibold text-center">
           E. Rodriquez St. Poblacion, Pandi, Bulacan 3014 0915-8571-380 /
@@ -43,8 +60,8 @@ export default {
         </p>
       </div>
     </div>
-    <table
-      class="m-auto min-w-[1000px] max-w-[1000px] border-collapse w-full box-border"
+    <table 
+      class="filupform m-auto min-w-[1000px] max-w-[1000px] border-collapse w-full box-border"
     >
       <tr>
         <td class="border-[1px]" colspan="2">
@@ -63,30 +80,35 @@ export default {
 
       <tr>
         <td class="border-[1px]" colspan="2">
-          Name: <input type="text" class="focus:outline-none" />
+          <span class="">Name</span>
+          <input
+            type="text"
+            class="focus:outline-none"
+            @input="onChange($event)"
+          />
         </td>
-        <td class="border-[1px]" colspan="1">
-          Birthday: <input type="text" class="focus:outline-none" />
+        <td class="border-[1px] whitespace-nowrap" colspan="1">
+          <span>Birthday:</span> <input type="text" class="focus:outline-none" />
         </td>
-        <td class="border-[1px]" colspan="1">
+        <td class="border-[1px] whitespace-nowrap" colspan="1">
           Age: <input type="text" class="focus:outline-none" />
         </td>
       </tr>
 
       <tr>
-        <td class="border-[1px]" colspan="2">
+        <td class="border-[1px] whitespace-nowrap" colspan="2">
           Arrival Date: <input type="date" class="focus:outline-none" />
         </td>
-        <td class="border-[1px]" colspan="1">
+        <td class="border-[1px] whitespace-nowrap" colspan="1">
           Arrival Time: <input type="time" class="focus:outline-none" />
         </td>
-        <td class="border-[1px]" colspan="1">
+        <td class="border-[1px] whitespace-nowrap" colspan="1">
           Status: <input type="text" class="focus:outline-none" />
         </td>
       </tr>
 
       <tr>
-        <td class="border-[1px]" colspan="4">
+        <td class="border-[1px] whitespace-nowrap" colspan="4">
           Adress: <input type="text" class="focus:outline-none min-w-[900px]" />
         </td>
       </tr>
@@ -101,11 +123,11 @@ export default {
       </tr>
 
       <tr>
-        <td class="border-[1px]" colspan="2">
+        <td class="border-[1px] whitespace-nowrap" colspan="2">
           No. of Tetanus Toxoid given:
           <input type="number" class="focus:outline-none" />
         </td>
-        <td class="border-[1px]" colspan="2">
+        <td class="border-[1px] whitespace-nowrap" colspan="2">
           OB Score: <input type="text" class="focus:outline-none" />
         </td>
       </tr>
@@ -403,113 +425,5 @@ export default {
         </td>
       </tr>
     </table>
-    <div class="max-w-[1000px] min-w-[1000px] m-auto">
-      <div class="min-h-[2px] w-full bg-gray-800 mt-10"></div>
-      <p class="font-bold text-center w-full">RETURN SLIP</p>
-      <table class="w-full">
-        <tr>
-          <td colspan="3"></td>
-          <td colspan="1" class="">
-            <p class="font-semibold">Date:</p>
-            <input
-              type="text"
-              class="border-b-[1px] focus:outline-none max-w-[100px] ml-6 mr-2"
-            />
-          </td>
-        </tr>
-        <tr>
-          <td class="" colspan="2">
-            <p class="font-semibold">patient's Name:</p>
-            <input
-              type="text"
-              class="focus:outline-none border-b-[2px] min-w-[400px]"
-            />
-          </td>
-          <td class="" colspan="1">
-            <p class="font-semibold">Age:</p>
-            <input
-              type="text"
-              class="focus:outline-none border-b-[2px] w-full"
-            />
-          </td>
-          <td class="" colspan="1">
-            <p class="font-semibold">Sex:</p>
-            <input
-              type="text"
-              class="focus:outline-none border-b-[2px] w-full"
-            />
-          </td>
-        </tr>
-        <tr class="">
-          <td colspan="4">
-            <p class="font-semibold">
-              Initial Diagnosis/ Admitting Impression:
-            </p>
-            <input
-              type="text"
-              class="focus:outline-none border-b-[2px] w-full"
-            />
-          </td>
-        </tr>
-        <tr class="">
-          <td colspan="4">
-            <p class="font-semibold">Action Taken:</p>
-            <input
-              type="text"
-              class="focus:outline-none border-b-[2px] w-full"
-            />
-          </td>
-        </tr>
-        <tr class="">
-          <td colspan="4">
-            <p class="font-semibold">Initial Plan:</p>
-            <input
-              type="text"
-              class="focus:outline-none border-b-[2px] w-full"
-            />
-          </td>
-        </tr>
-        <tr>
-          <td><br /></td>
-        </tr>
-        <tr>
-          <td colspan="3"></td>
-          <td colspan="1">
-            <input
-              type="text"
-              value="Juan Dela Cruz"
-              class="focus:outline-none border-b-[2px] w-full text-center"
-            />
-            <p class="text-center font-bold">Signature over Printed Name</p>
-            <p class="text-center font-bold">
-              Attending Health Provider / Department
-            </p>
-          </td>
-        </tr>
-      </table>
-      <div class="flex gap-2">
-        <p class="font-bold">Facility Contact Number:</p>
-        <input type="text" value="09XXXXXXXX" />
-      </div>
-    </div>
-    <div class="exclude w-full flex justify-center gap-3">
-      <AppButtonVue
-        @click="printForm"
-        :button-type="'reset'"
-        :label="'Print'"
-        :style="'bg-white-50 text-gray-800 hover:bg-green hover:text-white-100 bg-white-300 w-[150px]'"
-      />
-      <AppButtonVue
-        :button-type="'button'"
-        :label="'Clear'"
-        :style="'bg-white-50 text-gray-800 hover:bg-green hover:text-white-100 bg-white-300 w-[150px]'"
-      />
-      <AppButtonVue
-        :button-type="'submit'"
-        :label="'Save'"
-        :style="'w-[150px]'"
-      />
-      <!-- printForm -->
-    </div>
   </form>
 </template>

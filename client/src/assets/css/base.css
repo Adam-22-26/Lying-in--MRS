@@ -159,7 +159,20 @@ content: 'Employee';
   } */
   /* w-[60px] min-w-[60px] */
 
+.signUpFrom{
+  animation: zoomInAnimation 200ms ease-in-out forwards;
+}
+  .logInForm{
+    animation: zoomInAnimation 200ms ease-in-out forwards;
+  }
+  @keyframes zoomInAnimation {
+    0% {transform: scale(0.9);}
+    100% {transform: scale(1);}
 
+  }
+  .formCheckbox{
+    
+  }
   /* forrrrrrrrrrrm */
 
   .filupform td{
@@ -172,4 +185,5 @@ content: 'Employee';
     background-color: #f1f5f9;
     margin: 5px;
   }
+
   

@@ -136,7 +136,7 @@ export default {
   >
     <form
       @submit="submitSignup($event)"
-      class="md:m-2 flex max-w-[900px] flex-col gap-6 md:p-6 py-10 w-full justify-center items-center bg-white-50 md:rounded-3xl"
+      class="signUpFrom md:m-2 flex max-w-[900px] flex-col gap-6 md:p-6 py-10 w-full justify-center items-center bg-white-50 md:rounded-3xl"
     >
       <AppLogoVue />
       <h1 class="font-display text-[35px] text-center font-bold text-gray-800">
