@@ -52,6 +52,7 @@ const routes = [
     children: [
       {
         path: "form",
+        name: "TheFillupform",
         component: TheFillupform,
       },
       {

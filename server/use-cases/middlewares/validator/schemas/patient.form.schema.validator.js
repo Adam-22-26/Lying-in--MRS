@@ -33,21 +33,23 @@ const formdata_joi_schema = Joi.object().keys({
         ob_hisotryNSD: Joi.string().empty(""),
         cs: Joi.string().empty(""),
       }),
-      vs: Joi.object().keys({
+      vital_sign: Joi.object().keys({
         bp: Joi.string().empty(""),
         hr: Joi.string().empty(""),
         pr: Joi.string().empty(""),
         temp: Joi.string().empty(""),
         blood_type_RH: Joi.string().empty(""),
       }),
-      physical_exam: Joi.object().keys({
-        headNeck: Joi.string().empty(""),
-        heart: Joi.string().empty(""),
-        chest: Joi.string().empty(""),
-        abdomen: Joi.string().empty(""),
+
+    }),
+    physical_exam: Joi.object().keys({
+      headNeck: Joi.string().empty(""),
+      heart: Joi.string().empty(""),
+      chest: Joi.string().empty(""),
+      abdomen: {
         fh: Joi.string().empty(""),
         fht: Joi.string().empty(""),
-      }),
+      },
       pelvis: Joi.object().keys({
         ie: Joi.string().empty(""),
         cx_dilatation: Joi.string().empty(""),
@@ -59,21 +61,20 @@ const formdata_joi_schema = Joi.object().keys({
         },
         time: Joi.string().empty(""),
         character: Joi.string().empty(""),
-      }),
-      medication_taken: Joi.object().keys({
-        before_refferal: Joi.string().empty(""),
-        during_transport: Joi.string().empty(""),
-        progress_of_labor: Joi.string().empty(""),
-        diagnostic_and_finding: Joi.string().empty(""),
-        reasons_for_referral: Joi.string().empty(""),
-        name_and_designation_of_reffering_service_provider: Joi.string().empty(""),
-        contact_no: Joi.string().empty(""),
-        signature_of_referring_provider: Joi.string().empty(""),
-        accomplished_by_health_worker: {
-          yes: Joi.boolean(),
-          no: Joi.boolean(),
-        },
-      }),
+      })
+    }),
+    
+    medication_taken: Joi.object().keys({
+      before_refferal: Joi.string().empty(""),
+      during_transport: Joi.string().empty(""),
+      diagnostic_and_finding: Joi.string().empty(""),
+      reasons_for_referral: Joi.string().empty(""),
+      name_and_designation_of_reffering_service_provider: Joi.string().empty(""),
+      contact_no: Joi.string().empty(""),
+      accomplished_by_health_worker: {
+        yes: Joi.boolean(),
+        no: Joi.boolean(),
+      },
     }),
     // return_slip: Joi.object().keys({
     //   date: Joi.date().format(["YYYY-MM-DD", "DD-MM-YYYY"]).utc(),

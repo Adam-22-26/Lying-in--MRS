@@ -13,14 +13,13 @@ export default {
     RouterView,
     TheFillupformVue,
   },
-  created() {
-  },
+  created() {},
 };
 </script>
 <template>
   <div class="font-display flex flex-row max-h-[100vh] overflow-hidden">
     <AppSidebarVue />
-    <div class="w-full">
+    <div class="w-full flex flex-col">
       <AppTopbarVue />
       <div class="w-full h-full overflow-auto m-auto">
         <div>

@@ -1,10 +1,12 @@
 import { createRouter, createWebHistory } from "vue-router";
 import routes  from "./routes";
 import userAuthStore from "../store";
-
+import routerScrollBehavior from "../utils/routerScrollBehavior"
 const router = createRouter({
     history: createWebHistory(),
     routes,
+    routerScrollBehavior,
+    
 })
 
 router.beforeEach((to, from)=>{

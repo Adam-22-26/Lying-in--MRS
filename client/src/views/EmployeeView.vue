@@ -140,7 +140,7 @@ export default {
             </button>
           </p>
           <div class="flex flex-wrap w-full justify-center">
-            <AppLoadingVue v-if="!allVerifiedAccount" />
+            <AppLoadingVue v-if="!allVerifiedAccount"  key="1" />
             <TheProfileCardVue
               v-else
               v-for="verified in allVerifiedAccount?.verified"
@@ -156,7 +156,7 @@ export default {
         >
           <p class="text-[20px] font-semibold">Pending Accounts</p>
           <div class="flex flex-wrap w-full justify-center">
-            <AppLoadingVue v-if="!allPendingAccount" />
+            <AppLoadingVue v-if="!allPendingAccount" key="2" />
             <TheProfileCardVue
               v-else
               v-for="unverified in allPendingAccount?.unverified"

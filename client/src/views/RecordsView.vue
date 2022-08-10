@@ -26,7 +26,7 @@ export default {
 <template>
   <div class="flex flex-row max-h-[100vh] overflow-hidden font-display">
     <AppSidebarVue />
-    <div class="w-full">
+    <div class="w-full flex flex-col">
       <AppTopbarVue />
       <div class="w-full h-full overflow-auto md:p-3 ">
         <div class="relative flex flex-col gap-2">
