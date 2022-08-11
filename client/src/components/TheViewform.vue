@@ -82,7 +82,6 @@ export default {
       name="medication_taken"
       class="flex flex-col gap-3 md:border-[1px] border-gray-300 md:rounded-2xl p-3"
     >
-    {{newObjectForm.medication_taken}}
       <h2 class="font-semibold text-[22px] text-green">MEDICATION TAKEN</h2>
       <MedicationTaken  :medication-taken="newObjectForm.medication_taken"/>
       <ProgressLabor :medication-taken="newObjectForm.medication_taken" />
