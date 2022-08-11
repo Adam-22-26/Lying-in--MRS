@@ -56,6 +56,7 @@ export default {
             :placeholder="''"
             :is-required="false"
             :input-type="'number'"
+            :value="patientInformationObject.age"
             v-model="this.patientInformationObject.age"
           />
         </div>
@@ -86,6 +87,7 @@ export default {
             :placeholder="''"
             :is-required="false"
             :input-type="'text'"
+            :value="patientInformationObject.arrival_time"
             v-model="this.patientInformationObject.arrival_time"
           />
         </div>
@@ -97,6 +99,7 @@ export default {
             :placeholder="''"
             :is-required="false"
             :input-type="'text'"
+            :value="patientInformationObject.status"
             v-model="this.patientInformationObject.status"
           />
         </div>
@@ -110,6 +113,7 @@ export default {
         :placeholder="''"
         :is-required="false"
         :input-type="'text'"
+        :value="patientInformationObject.address"
         v-model="this.patientInformationObject.address"
       />
     </div>
@@ -123,6 +127,7 @@ export default {
           :placeholder="''"
           :is-required="false"
           :input-type="'number'"
+          :value="patientInformationObject.no_of_hours_stayed"
           v-model="this.patientInformationObject.no_of_hours_stayed"
         />
       </div>
@@ -134,6 +139,7 @@ export default {
           :placeholder="''"
           :is-required="false"
           :input-type="'number'"
+          :value="patientInformationObject.no_of_check_ups"
           v-model="this.patientInformationObject.no_of_check_ups"
         />
       </div>
@@ -148,6 +154,7 @@ export default {
           :placeholder="''"
           :is-required="false"
           :input-type="'number'"
+          :value="patientInformationObject.no_of_tetanus_toxoid_given"
           v-model="this.patientInformationObject.no_of_tetanus_toxoid_given"
         />
       </div>
@@ -159,6 +166,7 @@ export default {
           :placeholder="''"
           :is-required="false"
           :input-type="'text'"
+          :value="patientInformationObject.obs_score"
           v-model="this.patientInformationObject.obs_score"
         />
       </div>
@@ -280,6 +288,7 @@ export default {
             :placeholder="''"
             :is-required="false"
             :input-type="'text'"
+            :value="patientInformationObject.medical_history.others"
             v-model="this.patientInformationObject.medical_history.others"
           />
         </div>
@@ -294,6 +303,7 @@ export default {
             :placeholder="''"
             :is-required="false"
             :input-type="'text'"
+            :value="patientInformationObject.medical_history.ob_hisotry.nsd"
             v-model="this.patientInformationObject.medical_history.ob_hisotry.nsd"
           />
         </div>
@@ -304,6 +314,7 @@ export default {
             :placeholder="''"
             :is-required="false"
             :input-type="'text'"
+            :value="patientInformationObject.medical_history.ob_hisotry.cs"
             v-model="this.patientInformationObject.medical_history.ob_hisotry.cs"
           />
         </div>
@@ -322,6 +333,7 @@ export default {
             :placeholder="''"
             :is-required="false"
             :input-type="'text'"
+            :value="this.patientInformationObject.vital_sign.bp"
             v-model="this.patientInformationObject.vital_sign.bp"
           />
         </div>
@@ -332,6 +344,7 @@ export default {
             :placeholder="''"
             :is-required="false"
             :input-type="'text'"
+            :value="this.patientInformationObject.vital_sign.hr"
             v-model="this.patientInformationObject.vital_sign.hr"
           />
         </div>
@@ -342,6 +355,7 @@ export default {
             :placeholder="''"
             :is-required="false"
             :input-type="'text'"
+            :value="this.patientInformationObject.vital_sign.pr"
             v-model="this.patientInformationObject.vital_sign.pr"
           />
         </div>
@@ -352,6 +366,7 @@ export default {
             :placeholder="''"
             :is-required="false"
             :input-type="'text'"
+            :value="this.patientInformationObject.vital_sign.temp"
             v-model="this.patientInformationObject.vital_sign.temp"
           />
         </div>
@@ -362,6 +377,7 @@ export default {
             :placeholder="''"
             :is-required="false"
             :input-type="'text'"
+            :value="this.patientInformationObject.vital_sign.blood_type_RH"
             v-model="this.patientInformationObject.vital_sign.blood_type_RH"
           />
         </div>

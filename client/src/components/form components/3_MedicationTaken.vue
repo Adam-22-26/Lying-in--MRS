@@ -23,6 +23,7 @@ export default {
               :placeholder="''"
               :is-required="false"
               :input-type="'text'"
+              :value="this.medicationTaken.before_refferal"
               v-model="this.medicationTaken.before_refferal"
             />
           </div>
@@ -34,6 +35,7 @@ export default {
               :placeholder="''"
               :is-required="false"
               :input-type="'text'"
+              :value="this.medicationTaken.during_transport"
               v-model="this.medicationTaken.during_transport"
             />
           </div>

@@ -21,6 +21,7 @@ export default {
           :placeholder="''"
           :is-required="false"
           :input-type="'text'"
+          :value="this.physicalExam.head_neck"
           v-model="this.physicalExam.head_neck"
         />
       </div>
@@ -31,6 +32,7 @@ export default {
           :placeholder="''"
           :is-required="false"
           :input-type="'text'"
+          :value="this.physicalExam.heart"
           v-model="this.physicalExam.heart"
         />
       </div>
@@ -41,6 +43,7 @@ export default {
           :placeholder="''"
           :is-required="false"
           :input-type="'text'"
+          :value="this.physicalExam.chest"
           v-model="this.physicalExam.chest"
         />
       </div>
@@ -55,6 +58,7 @@ export default {
               :placeholder="''"
               :is-required="false"
               :input-type="'text'"
+              :value="this.physicalExam.abdomen.fh"
               v-model="this.physicalExam.abdomen.fh"
             />
           </div>
@@ -65,6 +69,7 @@ export default {
               :placeholder="''"
               :is-required="false"
               :input-type="'text'"
+              :value="this.physicalExam.abdomen.fht"
               v-model="this.physicalExam.abdomen.fht"
             />
           </div>
@@ -84,6 +89,7 @@ export default {
           :placeholder="''"
           :is-required="false"
           :input-type="'text'"
+          :value="this.physicalExam.pelvis.ie"
           v-model="this.physicalExam.pelvis.ie"
         />
       </div>
@@ -94,6 +100,7 @@ export default {
           :placeholder="''"
           :is-required="false"
           :input-type="'text'"
+          :value="this.physicalExam.pelvis.cx_dilatation"
           v-model="this.physicalExam.pelvis.cx_dilatation"
         />
       </div>
@@ -104,6 +111,7 @@ export default {
           :placeholder="''"
           :is-required="false"
           :input-type="'text'"
+          :value="this.physicalExam.pelvis.effacement"
           v-model="this.physicalExam.pelvis.effacement"
         />
       </div>
@@ -114,6 +122,7 @@ export default {
           :placeholder="''"
           :is-required="false"
           :input-type="'text'"
+          :value="this.physicalExam.pelvis.station"
           v-model="this.physicalExam.pelvis.station"
         />
       </div>
@@ -147,6 +156,7 @@ export default {
           :placeholder="''"
           :is-required="false"
           :input-type="'text'"
+           :value="this.physicalExam.pelvis.time"
           v-model="this.physicalExam.pelvis.time"
         />
       </div>
@@ -158,6 +168,7 @@ export default {
           :placeholder="''"
           :is-required="false"
           :input-type="'text'"
+           :value="this.physicalExam.pelvis.character"
           v-model="this.physicalExam.pelvis.character"
         />
       </div>

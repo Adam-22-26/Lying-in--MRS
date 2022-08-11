@@ -21,6 +21,7 @@ export default {
         :placeholder="''"
         :is-required="false"
         :input-type="'text'"
+        :value="this.medicationTaken.diagnostic_and_finding"
         v-model="this.medicationTaken.diagnostic_and_finding"
       />
     </div>
@@ -31,6 +32,7 @@ export default {
         :placeholder="''"
         :is-required="false"
         :input-type="'text'"
+        :value="this.medicationTaken.reasons_for_referral"
         v-model="this.medicationTaken.reasons_for_referral"
 
       />
@@ -47,6 +49,7 @@ export default {
         :placeholder="''"
         :is-required="false"
         :input-type="'text'"
+        :value="this.medicationTaken.name_and_designation_of_reffering_service_provider"
         v-model="this.medicationTaken.name_and_designation_of_reffering_service_provider"
 
       />
@@ -58,6 +61,7 @@ export default {
         :placeholder="''"
         :is-required="false"
         :input-type="'text'"
+        :value="this.medicationTaken.contact_no"
         v-model="this.medicationTaken.contact_no"
         
       />
