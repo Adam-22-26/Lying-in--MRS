@@ -2,6 +2,7 @@ const mutation = require("../data-access/mutation")
 module.exports = async(req, res, next)=>{
     try{
         const data = req.body;
+        console.log("data", data)
         const form = await mutation.createNewRecord(data)
         if(form?.success){
             res.status(201).send({...form})

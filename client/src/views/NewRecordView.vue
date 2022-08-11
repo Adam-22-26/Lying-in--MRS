@@ -22,7 +22,7 @@ export default {
     <div class="w-full flex flex-col">
       <AppTopbarVue />
       <div class="w-full h-full overflow-auto m-auto">
-        <div>
+        <div class="flex justify-center">
           <RouterView />
         </div>
       </div>

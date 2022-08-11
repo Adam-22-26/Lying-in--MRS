@@ -76,8 +76,7 @@ export default {
       <!-- <p class="text-[20px] font-semibold">{{ myProfile?.user?.fullname }}</p> -->
       <img
         :src=" myProfile?.user?.display_photo"
-        alt="hero"
-        class="objec-fit w-[35px] h-[35px] border-2 border-green rounded-full"
+        class="objec-fit w-[50px] h-[50px] border-2 border-green rounded-full transition-all ease-in-out"
       />
     </div>
   </div>

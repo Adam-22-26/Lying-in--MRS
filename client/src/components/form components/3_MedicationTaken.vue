@@ -1,12 +1,14 @@
 <script>
-import FormTextInputVue from './FormTextInput.vue'
+import FormTextInputVue from "./FormTextInput.vue";
 export default {
-    name: "MedicationTaken",
-    components:{
-        FormTextInputVue,
-    }
-    
-}
+  name: "PhysicalIExam",
+  components: {
+    FormTextInputVue,
+  },
+  props: {
+    medicationTaken: { type: Object },
+  },
+};
 </script>
 
 <template>
@@ -21,6 +23,7 @@ export default {
               :placeholder="''"
               :is-required="false"
               :input-type="'text'"
+              v-model="this.medicationTaken.before_refferal"
             />
           </div>
           <!-- during -->
@@ -31,6 +34,7 @@ export default {
               :placeholder="''"
               :is-required="false"
               :input-type="'text'"
+              v-model="this.medicationTaken.during_transport"
             />
           </div>
         </div>

@@ -9,6 +9,7 @@ import TheFillupform from "../components/TheFillupform.vue";
 import VerifyView from "../views/VerifyView.vue";
 import HomepageView from "../views/HomepageView.vue";
 import AppTopbar from "../components/AppTopbar.vue";
+import TheViewform from "../components/TheViewform.vue"
 // TheFillupform
 const routes = [
   {
@@ -62,7 +63,7 @@ const routes = [
     ],
   },
   {
-    path: "/view-records",
+    path: "/view-records/:id",
     name: "RecordsView",
     component: RecordsView,
     meta: {

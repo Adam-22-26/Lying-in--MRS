@@ -1,7 +1,7 @@
 const Joi = require('joi')
 
 const signupSchema = Joi.object().keys({
-    fullname: Joi.string().regex(new RegExp(/^(?![\s.]+$)[a-zA-Z\s.]*$/)).required(),
+    fullname: Joi.string(),
     gender: Joi.string(),
     age: Joi.number(),
     position: Joi.string(),

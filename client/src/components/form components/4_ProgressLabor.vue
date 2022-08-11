@@ -1,13 +1,15 @@
 <script>
-import FormTextInputVue from './FormTextInput.vue';
+import FormTextInputVue from "./FormTextInput.vue";
 export default {
-  name: "ProgressLabor",
-  components:{
+  name: "PhysicalIExam",
+  components: {
     FormTextInputVue,
-  }
+  },
+  props: {
+    medicationTaken: { type: Object },
+  },
 };
 </script>
-
 <template>
   <div
     class="flex flex-col gap-3 border-[1px] border-gray-300 md:rounded-2xl p-3 rounded-md"
@@ -17,8 +19,9 @@ export default {
         :label="'Diagnosis and Finding:'"
         :label-style="'font-semibold text-gray-600'"
         :placeholder="''"
-        :is-required="true"
+        :is-required="false"
         :input-type="'text'"
+        v-model="this.medicationTaken.diagnostic_and_finding"
       />
     </div>
     <div>
@@ -28,6 +31,8 @@ export default {
         :placeholder="''"
         :is-required="false"
         :input-type="'text'"
+        v-model="this.medicationTaken.reasons_for_referral"
+
       />
     </div>
   </div>
@@ -40,8 +45,10 @@ export default {
         :label="'Name and Designation of Referring Service Provider '"
         :label-style="'font-semibold text-gray-600'"
         :placeholder="''"
-        :is-required="true"
+        :is-required="false"
         :input-type="'text'"
+        v-model="this.medicationTaken.name_and_designation_of_reffering_service_provider"
+
       />
     </div>
     <div>
@@ -51,6 +58,8 @@ export default {
         :placeholder="''"
         :is-required="false"
         :input-type="'text'"
+        v-model="this.medicationTaken.contact_no"
+        
       />
     </div>
   </div>

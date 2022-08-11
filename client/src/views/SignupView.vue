@@ -76,7 +76,8 @@ export default {
     },
     submitSignup(e) {
       e.preventDefault();
-      if (this.signupData.confirm_pasword === this.signupData.password) {
+      if (this.confirm_pasword === this.signupData.password) {
+        // alert('dsfsdf')
         axios({
           url: "auth/user/signup",
           method: "post",

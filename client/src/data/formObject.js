@@ -6,14 +6,14 @@ const formObject = {
     patient_information:{
         name:"",
         birthday:"",
-        age: "",
+        age: 0,
         arrival_date:"",
         arrival_time:"",
         status:"",
         address:"",
-        no_of_hours_stayed:"",
-        no_of_check_ups:"",
-        no_of_tetanus_toxoid_given: "",
+        no_of_hours_stayed:0,
+        no_of_check_ups:0,
+        no_of_tetanus_toxoid_given: 0,
         obs_score:"",
         laboratory_done:{
             cbc:false,
@@ -29,7 +29,7 @@ const formObject = {
             thyroid_problems:false,
             heart_problems:false,
             diabetes_mellitus: false,
-            others:"false",
+            others:"",
             ob_hisotry: {
                 nsd:"",
                 cs: "",
@@ -42,11 +42,9 @@ const formObject = {
             temp:"",
             blood_type_RH:"",
         },
-        
     },
-    // ---
     physical_exam:{
-        headNeck:"",
+        head_neck:"",
         heart:"",
         chest:"",
         abdomen:{
@@ -66,7 +64,6 @@ const formObject = {
             character:"",
         },
     },
-    // ----
     medication_taken:{
         before_refferal: "",
         during_transport:"",

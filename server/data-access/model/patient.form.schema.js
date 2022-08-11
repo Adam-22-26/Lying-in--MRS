@@ -1,18 +1,18 @@
 const mongoose = require("mongoose");
 const patient_form_schema = new mongoose.Schema({
-        date:{type : Date},
-        time: {type:String, required: true},
+        date:{type : String},
+        time: {type:String},
         patient_information:{
             name:{type: String},
-            birthday:{type: Date},
+            birthday:{type: String},
             age: {type: Number},
-            arrival_date: {type : Date},
+            arrival_date: {type : String},
             arrival_time:{type: String},
             status:{type: String},
             address:{type: String},
-            no_of_hours_stayed:{type: String},
-            no_of_check_ups:{type: String},
-            no_of_tetanus_toxoid_given: {type: String},
+            no_of_hours_stayed:{type: Number},
+            no_of_check_ups:{type: Number},
+            no_of_tetanus_toxoid_given: {type: Number},
             obs_score:{type: String},
             laboratory_done:{
                 cbc:{type: Boolean},
@@ -45,7 +45,7 @@ const patient_form_schema = new mongoose.Schema({
         },
         // ---
         physical_exam:{
-            headNeck:{type: String},
+            head_neck:{type: String},
             heart:{type: String},
             chest:{type: String},
             abdomen:{
@@ -65,8 +65,6 @@ const patient_form_schema = new mongoose.Schema({
                 character:{type: String},
             },
         },
-        
-        // ----
         medication_taken:{
             before_refferal: {type: String},
             during_transport:{type: String},

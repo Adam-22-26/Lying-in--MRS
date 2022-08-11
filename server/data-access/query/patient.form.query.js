@@ -8,7 +8,7 @@ module.exports = (patientFormModel)=>{
         },
         getRecordByName: async(search)=>{
             try{
-                const patient_form_results = await patientFormModel.find({"patient_information.name": {$regex: search, $options: 'i'}}).exec()
+                const patient_form_results = await patientFormModel.find({"patient_information.name": {$regex: search, $options: 'i'}}).select(["patient_information.name","date", "time", "_id"]).exec()
                 return {success: true, patient_form_results}
             }catch(err){
                 console.log(err)
