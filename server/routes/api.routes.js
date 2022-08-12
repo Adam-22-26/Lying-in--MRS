@@ -10,6 +10,7 @@ const isAdmin = require("../use-cases/middlewares/authentication/isAdmin")
 const {validatePatientForm } = require("../use-cases/middlewares/validator/joi.validator")
 const patientFormController = require("../controllers/patient.form.controller")
 const getPatientFormController = require("../controllers/get.patient.form.controller")
+const getPatientFormsController = require("../controllers/get.patient.forms.controller")
 const searchDocumentController = require("../controllers/search.document.controller")
 const verifyUserController = require("../controllers/verify.user.controller")
 const accountRequestsController = require("../controllers/account.requests.controller")
@@ -20,6 +21,8 @@ const fileuploadController = require("../controllers/fileupload.controller")
 router.post("/fillup",isAuthenticated,validatePatientForm, patientFormController )
 
 router.get("/form",isAuthenticated, getPatientFormController)
+
+router.get("/forms",isAuthenticated, getPatientFormsController)
 
 router.get("/records", isAuthenticated,searchDocumentController)
 

@@ -26,6 +26,19 @@ module.exports = (patientFormModel)=>{
                 console.log(err)
                 return {succes: false, err}
             }
+        },
+        getTodayRecord: async(date)=>{
+            try{
+                const records = await patientFormModel.find({date:date}).select(["_id","patient_information.name", "patient_information.age","patient_information.gender"]).exec()
+                console.log("records", records)
+                if(records){
+                    return {success: true, records}
+                }
+            }catch(err){
+                console.log(err)
+                return {succes: false, err}
+            }
         }
+
     }
 }

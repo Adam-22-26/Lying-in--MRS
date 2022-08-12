@@ -7,7 +7,7 @@ export default {
     placeholder: { type: String },
     isRequired: { type: Boolean },
     inputType: { type: String },
-    value:{type:String}
+    value:{type:[String, Number]}
 
 
   },

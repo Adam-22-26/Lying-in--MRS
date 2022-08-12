@@ -116,7 +116,6 @@ export default {
         v-if="this.$route.name === 'TheFillupform'"
       >
         <AppButtonVue
-          @click="resetForm"
           ref="reset"
           :label="'CLEAR'"
           :button-type="'reset'"
@@ -154,6 +153,7 @@ export default {
       <!-- patien information wrapper -->
       <PatientInformationVue
         :patient-information="newObjectForm.patient_information"
+        :key="newObjectForm.patient_information"
       />
     </div>
     <!-- physical exam -->
@@ -163,7 +163,7 @@ export default {
       class="flex flex-col gap-3 md:border-[1px] border-gray-300 md:rounded-2xl p-3"
     >
       <h2 class="font-semibold text-[22px] text-green">PHYSICAL EXAM</h2>
-      <PhysicalIExam :physical-exam="newObjectForm.physical_exam" />
+      <PhysicalIExam :physical-exam="newObjectForm.physical_exam" :key="newObjectForm.physical_exam" />
     </div>
     <!-- medication taken -->
     <div
@@ -172,8 +172,8 @@ export default {
       class="flex flex-col gap-3 md:border-[1px] border-gray-300 md:rounded-2xl p-3"
     >
       <h2 class="font-semibold text-[22px] text-green">MEDICATION TAKEN</h2>
-      <MedicationTaken :medication-taken="newObjectForm.medication_taken" />
-      <ProgressLabor :medication-taken="newObjectForm.medication_taken" />
+      <MedicationTaken :medication-taken="newObjectForm.medication_taken" :key="newObjectForm.medication_taken" />
+      <ProgressLabor :medication-taken="newObjectForm.medication_taken" :key="newObjectForm.medication_taken" />
     </div>
     <!-- progress of labor -->
     <!-- <div

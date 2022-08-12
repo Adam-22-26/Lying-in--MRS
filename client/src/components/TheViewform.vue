@@ -55,7 +55,7 @@ export default {
     <FormNavigateVue :getNavigationButton="getNavigationButton" />
     <!-- date time wraper -->
     <div class="flex flex-row justify-end gap-2">
-      <DateTimeVue  :date="this.newObjectForm.date" :time="this.newObjectForm.time"/>
+      <DateTimeVue  :date="this.newObjectForm.date" :time="this.newObjectForm.time" :key="this.newObjectForm.date"/>
     </div>
     <!--  -->
     <div
@@ -65,7 +65,7 @@ export default {
     >
       <h2 class="font-semibold text-[22px] text-green">PATIENT INFORMATION</h2>
       <!-- patien information wrapper -->
-      <PatientInformationVue :patient-information="newObjectForm.patient_information" />
+      <PatientInformationVue :patient-information="newObjectForm.patient_information" :key="newObjectForm.patient_information" />
     </div>
     <!-- physical exam -->
     <div
@@ -74,7 +74,7 @@ export default {
       class="flex flex-col gap-3 md:border-[1px] border-gray-300 md:rounded-2xl p-3"
     >
       <h2 class="font-semibold text-[22px] text-green">PHYSICAL EXAM</h2>
-      <PhysicalIExam  :physical-exam="newObjectForm.physical_exam" />
+      <PhysicalIExam  :physical-exam="newObjectForm.physical_exam" :key="newObjectForm.physical_exam" />
     </div>
     <!-- medication taken -->
     <div
@@ -83,8 +83,8 @@ export default {
       class="flex flex-col gap-3 md:border-[1px] border-gray-300 md:rounded-2xl p-3"
     >
       <h2 class="font-semibold text-[22px] text-green">MEDICATION TAKEN</h2>
-      <MedicationTaken  :medication-taken="newObjectForm.medication_taken"/>
-      <ProgressLabor :medication-taken="newObjectForm.medication_taken" />
+      <MedicationTaken  :medication-taken="newObjectForm.medication_taken" :key="newObjectForm.medication_taken"/>
+      <ProgressLabor :medication-taken="newObjectForm.medication_taken" :key="newObjectForm.medication_taken" />
       
     </div>
     <!-- progress of labor -->
