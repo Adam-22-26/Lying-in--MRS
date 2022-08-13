@@ -1,7 +1,8 @@
 
-const {userModel, patientFormModel} = require("../model/index")
+const {userModel, patientFormModel, noteModel} = require("../model/index")
 
 module.exports = {
     ...require('./user.query')(userModel),
-    ...require("./patient.form.query")(patientFormModel)
+    ...require("./patient.form.query")(patientFormModel),
+    ...require("./note.query")(noteModel)
 }

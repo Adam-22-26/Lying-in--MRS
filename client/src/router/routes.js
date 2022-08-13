@@ -10,6 +10,7 @@ import VerifyView from "../views/VerifyView.vue";
 import HomepageView from "../views/HomepageView.vue";
 import AppTopbar from "../components/AppTopbar.vue";
 import TheViewform from "../components/TheViewform.vue"
+import PageNotFound from "../views/PageNotFoundView.vue"
 // TheFillupform
 const routes = [
   {
@@ -77,6 +78,11 @@ const routes = [
     meta: {
       requiresAuth: true,
     },
+  },
+  {
+    path: "/:catchAll(.*)",
+    name: "PageNotFound",
+    component: PageNotFound,
   },
 ];
 export default routes;

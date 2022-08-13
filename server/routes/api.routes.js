@@ -7,7 +7,7 @@ const {multerUploads} = require("../config/multer.config")(multer, DatauriParser
 
 const isAuthenticated = require("../use-cases/middlewares/authentication/isAuthenticated")
 const isAdmin = require("../use-cases/middlewares/authentication/isAdmin")
-const {validatePatientForm } = require("../use-cases/middlewares/validator/joi.validator")
+const {validatePatientForm,validateNoteSchema } = require("../use-cases/middlewares/validator/joi.validator")
 const patientFormController = require("../controllers/patient.form.controller")
 const getPatientFormController = require("../controllers/get.patient.form.controller")
 const getPatientFormsController = require("../controllers/get.patient.forms.controller")
@@ -17,6 +17,8 @@ const accountRequestsController = require("../controllers/account.requests.contr
 const accountVerifiedController = require("../controllers/account.verified.controller")
 const accountDeleteUserController = require("../controllers/account.deleteUser.controller")
 const fileuploadController = require("../controllers/fileupload.controller")
+const newNoteController = require("../controllers/note.controller")
+const getMyNotesController = require("../controllers/get.mynotes.controller")
 
 router.post("/fillup",isAuthenticated,validatePatientForm, patientFormController )
 
@@ -37,6 +39,10 @@ router.post("/verify", isAuthenticated,isAdmin, verifyUserController)
 router.get("/account/myprofile", isAuthenticated, )
 
 router.post("/addphoto",multerUploads, fileuploadController)
+
+router.post("/new-note",isAuthenticated, validateNoteSchema,newNoteController )
+
+router.get("/mynotes",isAuthenticated, getMyNotesController )
 
 router.get('/isAuthenticated',isAuthenticated,(req, res)=>{
     res.status(200).send({success: true, status: 200, user: req.user})

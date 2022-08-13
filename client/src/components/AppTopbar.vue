@@ -41,7 +41,7 @@ export default {
           .then((res) => {
             if (res.data.success) {
               this.userProfile = res.data;
-              console.log("atpptopbar", res.data);
+    
             } else {
               this.userProfile = { success: false, user: null };
             }
@@ -72,12 +72,16 @@ export default {
     <div v-if="!getSidebarStatus" class="ml-[-10px]">
       <TheTopbarMenuToggle />
     </div>
-    <div class="flex flex-row justify-end gap-3 w-full ml-[10px]">
-      <!-- <p class="text-[20px] font-semibold">{{ myProfile?.user?.fullname }}</p> -->
+    <div class="flex flex-row justify-end gap-4 w-full ml-[10px]">
+      <div class="flex flex-col justify-center ">
+        <p class="text-[20px] font-semibold text-center">{{ myProfile?.user?.fullname }}</p>
+       <p class="text-gray-600 text-center">{{myProfile?.user?.position}}</p>
+      </div>
       <img
         :src=" myProfile?.user?.display_photo"
         class="objec-fit w-[50px] h-[50px] border-2 border-green rounded-full transition-all ease-in-out"
       />
     </div>
+ 
   </div>
 </template>

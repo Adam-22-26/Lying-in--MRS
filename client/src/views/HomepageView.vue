@@ -6,7 +6,9 @@ export default {
 
 <template>
     <div>
-        <div>Homepage</div>
-        <!-- Homepage -->
+        <div>
+            <div>logo</div>
+            <div>links</div>
+        </div>
     </div>
 </template>

@@ -5,7 +5,7 @@ import TheViewform from "../components/TheViewform.vue";
 import { RouterLink, RouterView } from "vue-router";
 import { Icon } from "@iconify/vue";
 import { axios } from "../utils/axios";
-import moment from "moment"
+import moment from "moment";
 export default {
   name: "RecordsView",
   data() {
@@ -15,7 +15,7 @@ export default {
       results: [],
       formDataView: null,
       recents: [],
-      date : null
+      date: null,
     };
   },
   components: {
@@ -30,13 +30,17 @@ export default {
       this.getRecordById(id);
     }
     // get recent
-    this.getRecent()
+    this.getRecent();
   },
   watch: {
     $route() {
       // fetch
       const { id } = this.$route.params;
-      this.getRecordById(id);
+      if (id !== "no-id") {
+        this.getRecordById(id);
+      } else {
+        this.formDataView = null;
+      }
     },
   },
   methods: {
@@ -50,16 +54,15 @@ export default {
     getRecent() {
       this.date = moment().format("MMMM Do YYYY, h:mm:ss a").split(",")[0];
       axios({
-        
         url: `api/forms?date=${this.date}`,
         method: "get",
         withCredentials: true,
-      }).then(res=>{
-        if(res.data.success){
-          console.log("receeeeent", res.data)
-          this.recents = res.data.records
+      }).then((res) => {
+        if (res.data.success) {
+          console.log("receeeeent", res.data);
+          this.recents = res.data.records;
         }
-      })
+      });
     },
     onChangeSearchBox(e) {
       this.searchValue = e.target.value;
@@ -97,6 +100,9 @@ export default {
         });
     },
   },
+  beforeUnmount() {
+    
+  },
 };
 </script>
 <template>
@@ -105,16 +111,16 @@ export default {
     <div class="w-full flex flex-col">
       <AppTopbarVue />
       <div class="w-full h-full overflow-auto md:p-3">
-        <div class="relative flex flex-col gap-2 border-[1px] border-white-300 p-2 rounded-xl">
-          <div
-            class="flex gap-2 items-center "
-          >
+        <div
+          class="relative flex flex-col gap-2 border-[1px] border-white-300 p-2 rounded-xl"
+        >
+          <div class="flex gap-2 items-center">
             <p class="text-[22px] font-semibold text-gray-800">RECENT</p>
-            <p class="text-gray-600">{{this.date}}</p>
+            <p class="text-gray-600">{{ this.date }}</p>
             <button
               @click="toggleSearch"
               type="button"
-              class="ml-5 transition-all rounded-3xl w-[50px] hover:w-[100px] ease-in-out p-2 flex items-center justify-end text-white-20 bg-green"
+              class="ml-5 transition-all rounded-3xl w-[50px] hover:w-[100px] ease-in-out px-2 py-1 flex items-center justify-end text-white-20 bg-green"
               v-if="!this.openSearch"
             >
               <Icon icon="fa:search" class="w-[30px] h-[30px]" />
@@ -124,18 +130,21 @@ export default {
             <router-link
               v-for="recent in recents"
               :to="{ name: 'RecordsView', params: { id: recent?._id } }"
-              class="flex-1 flex flex-col flex-grow whitespace-nowrap border-[1px] border-green hover:bg-green  hover:text-white-20 hover:cursor-pointer p-1 rounded-md items-center"
+              class="flex-1 flex flex-col flex-grow whitespace-nowrap border-[1px] border-green hover:bg-green text-gray-700 hover:text-white-20 hover:cursor-pointer p-1 rounded-md items-center"
             >
-              <p class="font-semibold text-[18px] text-gray-700">{{ recent.patient_information.name }} </p>
-              <!-- <div class="flex flex-row gap-3">
-                <p class="italic">{{recent.patient_information.age}}</p>
-                <p class="italic">{{recent.patient_information.gender}}</p>
-              </div> -->
+              <p class="font-semibold text-[18px]">
+               {{ recent.patient_information.name }}
+              </p>
+              <div class="flex flex-row gap-3">
+                <p class="italic"><span>Age:</span>{{ recent.patient_information.age }}</p>
+                <p class="italic"><span>Gender:</span>{{ recent.patient_information.gender }}</p>
+              </div>
+
             </router-link>
           </div>
           <!-- search -->
           <div
-            class="searchBox  z-10 flex flex-col gap-2 p-3 absolute inset-x-0 top-0 bg-white-20 transition-all"
+            class="searchBox z-10 flex flex-col gap-2 p-3 absolute inset-x-0 top-0 bg-white-20 transition-all rounded-xl"
             v-if="this.openSearch"
           >
             <div class="flex w-full gap-3">
@@ -177,12 +186,24 @@ export default {
             </div>
           </div>
         </div>
-        <div>
+
+        <div class="w-full">
           <div
             v-if="!formDataView"
-            class="w-full min-h-full flex flex-col justify-center items-center"
-          ></div>
-          <TheViewform :formDataView="formDataView" v-else-if="formDataView" :key="formDataView._id"/>
+            class="flex flex-col justify-center items-center"
+          >
+            <img
+              src="../assets/hero/document_shield_plus.webp"
+              alt=""
+              class="w-[250px]"
+            />
+          </div>
+
+          <TheViewform
+            :formDataView="formDataView"
+            v-else-if="formDataView"
+            :key="formDataView._id"
+          />
         </div>
       </div>
     </div>

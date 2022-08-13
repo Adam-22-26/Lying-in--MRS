@@ -193,3 +193,11 @@ content: 'Employee';
     0% {margin-top:-100%}
     100% {margin-top:0%}
       }
+
+.newNote{
+  animation: slideToTop 400ms ease-in-out forwards;
+}
+@keyframes slideToTop {
+  0% {margin-bottom:-100%}
+100% {margin-bottom:0%}
+    }
