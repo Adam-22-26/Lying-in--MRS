@@ -52,6 +52,7 @@ module.exports = {
       },
       backgroundImage: {
         "auth-hero": "url('../hero/signup-login-hero.png')",
+        "snap-1": "../hero/landing_page_snap_1.svg"
       },
       screens: {
         xs: "320px",
