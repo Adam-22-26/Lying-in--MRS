@@ -26,8 +26,3 @@ class="sidebarLink  dashboardLink text-[30px] text-white-500 w-full flex items-c
   /></router-link>
 </template>
 
-<style scoped> 
-    .router-link-exact-active{
-        @apply text-green;
-    }
-</style>

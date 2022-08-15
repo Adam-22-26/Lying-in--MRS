@@ -31,7 +31,7 @@ export default {
         We are sorry, but the page you requested was not found.
       </p>
       <button
-        @click="() => this.$router.push({ name: 'HomepageView' })"
+        @click="() => this.$router.push({ name: 'LandingPage' })"
         class="bg-gray-800 m-auto text-white-20 flex items-center gap-2 px-4 py-2 rounded-xl mt-5"
       >
         <Icon icon="bx:arrow-back" /><span>Back to home</span>
