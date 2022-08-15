@@ -108,7 +108,7 @@ export default {
     <!-- address -->
     <div class="flex w-full">
       <FormTextInputVue
-        :label="'Adress'"
+        :label="'Address'"
         :label-style="'font-semibold text-gray-600'"
         :placeholder="''"
         :is-required="false"

@@ -144,7 +144,7 @@ export default {
         Create Account
       </h1>
       <AppInputFieldVue
-        :label="'Fullname'"
+        :label="'Full Name'"
         :input-type="'text'"
         :is-required="true"
         :placeholder="'Juan Dela Cruz'"
