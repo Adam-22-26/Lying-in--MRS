@@ -5,7 +5,7 @@ import userAuthStore from "./store";
 const app = createApp(App);
 
 app.use(userAuthStore);
-userAuthStore.commit("fetchUser");
+// userAuthStore.commit("fetchUser");
 app.use(router);
 
 app.mount("#app");
