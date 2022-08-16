@@ -19,6 +19,8 @@ const accountDeleteUserController = require("../controllers/account.deleteUser.c
 const fileuploadController = require("../controllers/fileupload.controller")
 const newNoteController = require("../controllers/note.controller")
 const getMyNotesController = require("../controllers/get.mynotes.controller")
+const searchByObScore = require("../controllers/searchBy.obscore.controller")
+const searchByDateController = require("../controllers/searchBy.date.controller")
 
 router.post("/fillup",isAuthenticated,validatePatientForm, patientFormController )
 
@@ -27,6 +29,10 @@ router.get("/form",isAuthenticated, getPatientFormController)
 router.get("/forms",isAuthenticated, getPatientFormsController)
 
 router.get("/records", isAuthenticated,searchDocumentController)
+
+router.get("/records/ob-score/",isAuthenticated, searchByObScore )
+// searchByDateController
+router.get("/records/date/",isAuthenticated, searchByDateController )
 
 router.get("/account/requests", isAuthenticated,isAdmin, accountRequestsController )
 
