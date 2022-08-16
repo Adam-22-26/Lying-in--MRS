@@ -103,6 +103,7 @@ export default {
   <!-- form wrapper -->
 
   <form
+  autocomplete="off"
     @submit="submitForm($event)"
     ref="fillup_form"
     class="flex flex-col gap-3 md:m-5 my-2 pb-10 max-w-[1600px]"

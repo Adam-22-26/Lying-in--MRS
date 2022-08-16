@@ -136,6 +136,7 @@ export default {
     class="font-display flex w-full justify-center items-center min-h-[100vh] bg-white-300"
   >
     <form
+    autocomplete="off"
       @submit="submitSignup($event)"
       class="signUpFrom md:m-2 flex max-w-[900px] flex-col gap-6 md:p-6 py-10 w-full justify-center items-center bg-white-50 md:rounded-3xl"
     >

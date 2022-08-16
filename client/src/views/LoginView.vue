@@ -62,6 +62,7 @@ export default {
     class="flex w-full justify-center items-center min-h-[100vh] md:bg-white-300 "
   >
     <form
+    autocomplete="off"
     @submit="submitSignup($event)"
       class="logInForm flex md:max-w-[500px] flex-col gap-6 p-6 py-10 w-full justify-center items-center bg-white-50 rounded-3xl"
     >
