@@ -203,7 +203,8 @@ export default {
                     <p class="text-[22px] font-semibold text-gray-700">
                       {{ form?.patient_information?.name }}
                     </p>
-                    <p class="text-[16px] text-gray-600">{{ form?.date }}</p>
+                    <p v-if="searchBy !== 'ob_score'" class="text-[16px] text-gray-600">{{ form?.date }}</p>
+                    <p v-if="searchBy === 'ob_score'" class="text-[16px] text-gray-600">{{ form?.patient_information.obs_score }}</p>
                   </router-link>
                 </div>
               </div>

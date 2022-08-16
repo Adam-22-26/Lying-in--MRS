@@ -5,7 +5,7 @@ module.exports = (patientFormModel) => {
     return {
         getObScores: async (search) => {
             try {
-                const patientWithObScore = await patientFormModel.find({ "patient_information.obs_score": { $regex: search, $options: 'i' } }).select(["patient_information.name","patient_information.ob_score", "date", "time", "_id"]).exec()
+                const patientWithObScore = await patientFormModel.find({ "patient_information.obs_score": { $regex: search, $options: 'i' } }).select(["patient_information.name","patient_information.obs_score", "date", "time", "_id"]).exec()
                 console.log("patientWithObScore.", patientWithObScore)
                 return { success: true, patientWithObScore }
 
