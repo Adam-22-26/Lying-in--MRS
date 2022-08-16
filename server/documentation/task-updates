@@ -1,0 +1,11 @@
+
+NOTE:
+autherization:
+we can add authentication for some routes if they need some valid user that has limited access. 
+
+REPORT /* ✓ DONE  ✗ ONGOING 
+
+july:16 -first day
+accomplished: router, routes for auth/user/signup
+ongoing: user's input validation 
+

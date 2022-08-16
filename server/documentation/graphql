@@ -1,0 +1,12 @@
+
+/create graphql api design
+
+
+packages:
+express-graphql
+graphql
+
+basic types
+Float, Boolean, ID, String, Int, null
+- use exclamation point to indicate a type cannot be a nullable.
+- to use a list type ex. [Int] - list of integers

@@ -1,0 +1,45 @@
+goal:
+- this server code should be re-usable from basic-complex data to any app that has user authentication, database, fetching data(api)
+- clean code
+- apply solid principle 
+- easy to read, predictable.
+
+about folder structure?
+- I used clean architecture to layer the application and here is the link to read more: https://itnext.io/clean-architecture-making-node-js-api-shine-38134b8f9b5c
+
+In clean architecture you can (for example):
+- easily replace express with another framework
+- easily replace mongo with another DB
+
+why to use Dependency Injection?
+- avoid repetition of importing same modules 
+- make our code reusable, maintenable, easier to configure and also migrating to different framework.
+
+
+/use-cases/middlewares/validator
+- use to validate user's input only, but not in database.
+- /joi.validator - factory function to all schemas for joi and we used it inside /routes modules as middleware.
+- /schemas - our collection schemas for joi.
+- 
+
+passport & passport strategy
+- https://www.passportjs.org/
+- use for user's authentication, middleware
+
+express-session
+- https://www.npmjs.com/package/express-session
+- server side session
+
+mongo-store / connect-mongo
+- https://www.npmjs.com/package/connect-mongo
+- helps to store session to our mongodb database 
+
+GraphQL API for atlas mdb
+- https://www.mongodb.com/docs/atlas/app-services/graphql/
+- resposible in data queries.
+
+RESPONSES STATUS CODE:
+401 - UNAUTHORIZED
+201 - CREATED
+200 - SUCCESS
+
