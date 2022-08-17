@@ -68,7 +68,7 @@ npm start
 ```sh
 localthost:3000
 ```
-
+ 
 
 ### Build tailwindcss
 ```sh
