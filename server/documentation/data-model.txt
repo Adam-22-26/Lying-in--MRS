@@ -1,0 +1,2 @@
+for validation schema: 
+- I used joi package to validate the user's input here is the link to learn more: https://softchris.github.io/pages/joi.html#node-js-express-and-joi

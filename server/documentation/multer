@@ -1,0 +1,7 @@
+https://blog.bitsrc.io/uploading-files-and-images-with-vue-and-express-2018ca0eecd0
+
+<!-- multer and cloudinary -->
+
+https://medium.com/@joeeasy_/uploading-images-to-cloudinary-using-multer-and-expressjs-f0b9a4e14c54
+
+<!--convert the buffer to the format that the Cloudinary uploader will understand, we’re going to use the datauri package.-->

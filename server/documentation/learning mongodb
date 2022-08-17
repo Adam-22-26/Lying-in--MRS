@@ -1,0 +1,35 @@
+
+SCHEMA TYPES
+    Object
+    Array
+    String
+    Number
+    Boolean
+    UUID
+    ObjectId
+    Binary Data
+    Mixed
+    Set
+    Dictionary
+    MONGOOSE
+    - ODM for mongodb and nodejs.
+    MONGODB 
+    - no sql database.
+
+
+USE REALM SDK 
+- mobile database
+- to create local schema and sync to the mongodb 
+- Realm is an embedded, object-oriented database that lets you build real-time, 
+offline-first applications
+- sub documents - can nest documents
+
+
+
+small notes:
+- you can create methods in schema instances ex. userSchema.methods.function = ()=>{}
+- change streams let you listen for updates to documents in a given model's collection, like watch().on("change")
+
+CHEATSHEET:
+
+Indexing: db.collection.createIndex({"time": 1, }) - ascending order. autoIndex : false when its in production.
